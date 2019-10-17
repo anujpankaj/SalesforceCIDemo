@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable" >
+    <aura:attribute name="DisplayButton" type="Boolean" default="false"/>
+    <aura:attribute name="recordIds" type="String" default="0062800000CezicAAB"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInitCloseWindow}"/>
+	<ui:button label="Open File" press="{!c.OpenFile}" disabled="{!v.DisplayButton}"></ui:button>
+</aura:component>

@@ -1,0 +1,4 @@
+<design:component >
+	 <design:attribute name="property1" datasource="apex://MyCustomPickList"/>
+    <design:attribute name="StaticProperity" datasource="value1,value2,value3" default="value1"/>
+</design:component>

@@ -1,0 +1,5 @@
+<design:component label="Radio Button">
+    <design:attribute name="Label"/>
+    <design:attribute name="Name"/>
+    <design:attribute name="IsSelected" label="Is Selected" datasource="true,false"/>
+</design:component>

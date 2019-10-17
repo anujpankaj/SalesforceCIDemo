@@ -1,0 +1,12 @@
+<aura:component controller="ParentController">
+    <aura:attribute name="ParentComp" type="WrapperParent" />
+    <aura:attribute name="Number" type="numberclass" />
+    <aura:handler name="init" value="{!this}" action="{!c.LoadPageObject}"/>
+	<div id="divParent">
+    	Parent component
+       <c:ChildComponent ChildObject="{!v.ParentComp.ObjChild}"/>
+    </div>
+    <div id="divButton">
+		<button class="slds-button slds-button--neutral" onclick="{!c.ChangeValue}">Click Me</button>  
+    </div>
+</aura:component>

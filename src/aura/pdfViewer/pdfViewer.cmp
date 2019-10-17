@@ -1,0 +1,6 @@
+<aura:component access="GLOBAL" extensible="false">
+    <aura:attribute name="pdfData" type="String" access="GLOBAL"
+                    description="PDF data in base 64 ecncoded format"/>
+    <!-- iframe for load PDF viewer-->
+    <iframe aura:id="pdfFrame" src="/resource/PDFViewer2/PDFViewerLibrary/viewer.html" class="pdfFrame" onload="{!c.loadpdf}"></iframe>
+</aura:component>

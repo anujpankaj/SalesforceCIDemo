@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable" >
+	<aura:handler name="destroy" value="{!this}" action="{!c.handleDestroy}"/>
+    {!$Browser.isTablet}
+    {!$Browser.isPhone}
+    {!$Browser.isAndroid}
+    {!$Browser.formFactor}
+</aura:component>

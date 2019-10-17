@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" >
+	<ui:button label="click me" press="{!c.changeApp}" />
+</aura:component>

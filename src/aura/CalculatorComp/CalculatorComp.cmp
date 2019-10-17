@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" extends="c:SuperComp" >
+    <ltng:require styles="/resource/slds090/assets/styles/salesforce-lightning-design-system.min.css"
+                  scripts="/resource/LoanCalculator/LoanCalculator/demo.js?i=2"/>
+ <ui:button aura:id="button" buttonTitle="Click to see what you put into the field" class="button" label="Click me" press="{!c.myAction}"/>
+</aura:component>

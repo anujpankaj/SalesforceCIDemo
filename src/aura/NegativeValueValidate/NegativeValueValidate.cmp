@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="myNumber" type="integer" default="10"/>
+    <aura:attribute name="oldmyNumber" type="integer" default="-1"/>
+    <ui:inputNumber aura:id="number" label="Enter a number: " labelClass="numbers" 
+                    value="{!v.myNumber}"
+                    keyup="{!c.helloWorld1}"
+                    keypress="{!c.helloWorld}"/>
+   <!-- <ui:inputText label="Expense Name"  required="true"/> -->
+</aura:component>

@@ -1,0 +1,131 @@
+<aura:component controller="ExpencesMintance" implements="force:appHostable">
+    <ltng:require styles="/resource/slds090/assets/styles/salesforce-lightning-design-system.min.css"/>    
+    <!--Action handler for display waiting message -->
+    <aura:handler event="aura:waiting" action="{!c.waiting}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.doneWaiting}"/>    
+    <!--Action handler for page lable-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+    <aura:handler name="updateExpense" event="c:updateExpenseItem" action="{!c.updateEvent}"/>
+    <aura:handler name="DeleteExpense" event="c:DeleteExpenseItem" action="{!c.DeleteEvent}"/>
+    <aura:handler name="EditExpenseItem" event="c:EditExpense" action="{!c.EditExpense}"/>
+    <aura:attribute name="expenses" type="Expense__c[]"/>
+    <aura:attribute name="newExpense" type="Expense__c" 
+                    default="{
+                             	'sobjectType':'Expense__c',
+                                 'Name': '',
+                                 'LightAnujOrg__Amount__c' : 0,
+                                 'LightAnujOrg__Client__c' : '',
+                                 'LightAnujOrg__Date__c' :'',
+                                 'LightAnujOrg__Reimbursed__c' : false                                 
+                             }"/>	
+    <!-- Attribute for expense count-->
+    <aura:attribute name="Total" type="Double" default="0.00"/>
+    <aura:attribute name="Exp" type="Double" default="0"/>
+    <!-- Attribute for Waiting-->
+    <aura:attribute name="wait" type="String"/>
+    <!--Section for waiting-->
+    	<div calss="wait">
+            	{!v.wait}
+        </div>
+    <!--End section for doing waiting-->
+    <!--Input Form using components-->
+    <div class="container">
+        <form class="slds-form--stacked">
+            <div class="slds-form-element slds-is-required">
+                <div class="slds-form-element__control"> 
+                    <ui:inputText aura:id="expName" label="Expense Name" labelClass="slds-form-element__label"  value="{!v.newExpense.Name}" class="slds-input" required="true"/>
+                </div>                 
+            </div>
+            <div class="slds-form-element slds-is-required">
+                <div class="slds-form-element__control">                    
+                    <ui:inputNumber aura:id="expAmount" value="{!v.newExpense.LightAnujOrg__Amount__c}" class="slds-input" label="Expense Amount" labelClass="slds-form-element__label" placeholder="0.00" required="true"/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <div class="slds-form-element__control">
+                    <ui:inputText aura:id="expClientName" value="{!v.newExpense.LightAnujOrg__Client__c}"
+                                  class="slds-input" placeholder="ABC co." label="Client Name" labelClass="slds-form-element__label"
+                                  />             
+                </div>
+            </div>
+            <div class="slds-form-element">
+            	<div class="slds-form-element__control">
+                    <ui:inputDateTime aura:id="expDate" value="{!v.newExpense.LightAnujOrg__Date__c}"
+                                      class="slds-input" label="Expense Date" labelClass="slds-form-element__label"
+                                      displayDatePicker="true"/>
+                </div>
+            </div>
+            <div class="slds-form-element">
+            	
+                    <ui:inputCheckbox aura:id="expReimbursed" value="{!v.newExpense.LightAnujOrg__Reimbursed__c}"
+                                      class="slds-input" label="Reimbursed?"  labelClass="slds-form-element__label"/>	
+                
+                <ui:button label="Submit" class="slds-button slds-button--neutral" labelClass="label" press="{!c.createExpense}"/>
+                
+           </div>
+        </form>        
+    </div><!--Expense container-->
+    <!-- Expense Counter-->
+    <div class="container slds-p-top--medium">
+        <div class="row">
+        	<div class="slds-title">
+             <!--Make counter red if total amount in more than 100-->
+                <div class="{!v.Total>100?
+                             'slds-notify slds-notify--toast slds-theme--error slds-theme--alert-texture'
+                             :
+                             'slds-notify slds-notify--toast slds-theme--alert-texture'
+                            }">
+                    
+                    <p>
+                    	Total Expanses
+                    </p>
+                    $<ui:outputNumber class="slds-truncate" value="{!v.Total}" format=".00"/>
+                
+                </div>
+            </div>
+            <div class="slds-tile ">
+            	<div class="slds-notify slds-notify--toast slds-theme--alert-texture">
+                	<p class="slds-tile__title slds-truncate"> No. of Expenses</p>
+                    <ui:outputNumber class="slds-truncate" value="{!v.Exp}"/>
+                </div>
+            </div>
+        </div>	
+    </div>
+    <!--Display expense record-->
+    <div class="container slds-p-top--medium">
+        <div id="list" class="row">
+        	<table>
+                <tr class="navbar navbar-default navbar-static-top headerRow">
+                   <th class="head">
+                       	Expense Name
+                   </th>
+                   <th class="head">
+                        Client	
+                   </th>
+                   <th class="head">
+                       	Amount
+                   </th>
+                   <th class="head">
+                       Date
+                   </th>
+                    <th class="head">
+                    	Reimbursed
+                    </th>
+                    <th class="head">
+                        Delete
+                    </th>
+                </tr>
+              	<aura:iteration items="{!v.expenses}" var="expense">
+                    <c:ExpenseManagementList expense="{!expense}"/>
+               </aura:iteration>
+             </table>
+	
+        </div>	
+        <div class="container slds-p-top--medium">         
+            <ui:button label="Add Expense" class="slds-button slds-button--neutral slds-button__icon--right" labelClass="label" press="{!c.AddExpense}"/>
+        </div>
+    </div>
+   
+    	<c:DraggableComp ></c:DraggableComp>
+   
+	</aura:component>

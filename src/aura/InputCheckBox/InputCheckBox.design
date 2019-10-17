@@ -1,0 +1,3 @@
+<design:component label="Check Box">
+    <design:attribute name="Label" label="Label"/>
+</design:component>

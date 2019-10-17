@@ -1,0 +1,11 @@
+<aura:component access="global" implements="flexipage:availableForAllpageTypes">
+    <aura:attribute access="private" name="error" type="String" default=""/>
+    <div>
+    	<aura:if isTrue="{! !empty(v.error)}">
+            <lightning:textarea name="errorTextArea" value="{!v.error}" lable="Error:"/>
+        </aura:if>
+        <lightning:container aura:id="ReactApp"
+                             src="{!$Resource.ApexController + '/index.html'}"
+                             onerror="{!c.handleError}"/>
+    </div>
+</aura:component>

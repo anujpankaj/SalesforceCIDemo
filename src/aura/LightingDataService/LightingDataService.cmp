@@ -1,0 +1,44 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId" >
+    <ltng:require styles="/resource/slds090/assets/styles/salesforce-lightning-design-system.min.css"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="recordError" type="String"/>
+    <!-- Loading record-->    
+    <force:recordPreview aura:id="recordHandler"
+                         recordId="{!v.recordId}"
+                         layoutType="FULL"
+                         targetRecord="{!v.record}"
+                         targetError="{!v.recordError}"
+						 mode="EDIT"	                         
+    />
+     <!-- Display a header with details about the record -->
+        <div class="slds-page-header" role="banner">
+            <p class="slds-text-heading--label">{!v.record.Name}</p>
+            <h1 class="slds-page-header__title slds-m-right--small
+                slds-truncate slds-align-left">{!v.record.Rating}, {!v.record.Parent.Name}</h1>
+        </div>
+
+        <!-- Display Lightning Data Service errors, if any -->
+        <aura:if isTrue="{!not(empty(v.recordError))}">
+            <div class="recordError">
+                <ui:message title="Error" severity="error" closable="true">
+                    {!v.recordError}
+                </ui:message>
+            </div>
+        </aura:if>
+   <!-- Display an editing form-->
+    <div class="slds-form--stacked">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="recordName">Name: </label>
+            <div class="slds-form-element__control">
+              <ui:inputText class="slds-input" aura:id="recordName"
+                value="{!v.record.Name}" required="true"/>
+            </div>
+        </div>
+        <div class="slds-form-element">
+            <ui:button label="Save Record" press="{!c.handleSaveRecord}"
+                class="slds-button slds-button--brand" />
+        </div>
+
+    </div>
+    
+</aura:component>

@@ -1,0 +1,4 @@
+<aura:component >
+    <aura:handler event="c:NonLlightingEvent" action="{!c.handlerEvent}"/>
+    <c:NonLlightingNotifire ></c:NonLlightingNotifire>
+</aura:component>

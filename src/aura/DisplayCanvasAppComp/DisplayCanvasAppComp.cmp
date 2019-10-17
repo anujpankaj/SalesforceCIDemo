@@ -1,0 +1,20 @@
+<aura:component implements="force:appHostable,forceCommunity:availableForAllPageTypes"  access="global">
+    <aura:attribute name="accountData" type="Sobject" />
+    <ltng:require scripts="{!$Resource.canvasController}"/> 
+   <!-- <force:canvasApp developerName="LightingCanvasApp" applicationName="LightingCanvasApp" namespacePrefix="LightAnujOrg" 
+                     />-->
+    <div>
+        <div>
+            <lightning:input name="input1" label="Account Name" value="{!v.accountData.accuntName}" />
+        </div>
+        <div>
+            <lightning:input name="input1" label="Account Name" value="{!v.accountData.website}" />
+        </div>
+        <div>
+            <force:canvasApp developerName="ConvasExercise" applicationName="CanvasExercise" namespacePrefix="LightAnujOrg" 
+                             parameters='{"param1":"anuj","param2":"value2"}' onCanvasSubscribed="{!c.afterScriptsLoaded}" />
+            
+        </div>
+    </div>
+   
+</aura:component>

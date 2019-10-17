@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes" extends="c:FetchControlData">
+    <aura:attribute name="Label" type="String"/>
+    <aura:attribute name="Variant" type="String"/>
+    <lightning:button variant="{!v.Variant}" label="{!v.Label}" class="slds-align--absolute-center slds-float--right" onclick="{! c.handleClick }" />
+</aura:component>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>anuj.kumar@saasfocus.com</contactEmail>
+    <label>Partner community access</label>
+    <samlConfig>
+        <acsUrl>https://lightningappbuilder121-dev-ed.my.salesforce.com?so=00D28000001GWK4</acsUrl>
+        <encryptionType>AES_128</encryptionType>
+        <entityUrl>https://mydailyexpense-developer-edition.ap2.force.com/</entityUrl>
+        <issuer>https://lightningappbuilder121-dev-ed.my.salesforce.com</issuer>
+        <samlNameIdFormat>Unspecified</samlNameIdFormat>
+        <samlSubjectType>FederationId</samlSubjectType>
+    </samlConfig>
+</ConnectedApp>

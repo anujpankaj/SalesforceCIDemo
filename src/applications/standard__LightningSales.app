@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Opportunity_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Opportunity</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#1589EE</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Manage your sales process with accounts, leads, opportunities, and more</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Sales</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>SalesHome</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Sales Profile</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>TestHome</tabs>
+    <tabs>DynamicApp</tabs>
+    <tabs>Flow_View</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Task</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Campaign</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Feed</tabs>
+    <tabs>standard-CollaborationGroup</tabs>
+    <tabs>Expense__c</tabs>
+    <tabs>Browser_Back</tabs>
+    <tabs>Expense_Management</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>standard-OtherUserProfile</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Entitlement</tabs>
+    <tabs>standard-News</tabs>
+    <tabs>CanvasAPP</tabs>
+    <tabs>standard-Product2</tabs>
+    <tabs>Project__c</tabs>
+    <tabs>Designing</tabs>
+    <tabs>File_Viwer</tabs>
+    <tabs>PDF_viewer</tabs>
+    <tabs>Case_Study__c</tabs>
+    <tabs>Suggestion__c</tabs>
+    <tabs>PrintPreviewTest</tabs>
+    <tabs>Customer_Satisfaction_Survey__c</tabs>
+    <tabs>standard-Quote</tabs>
+    <tabs>Exchange_Rate__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Sales_UtilityBar</utilityBar>
+</CustomApplication>

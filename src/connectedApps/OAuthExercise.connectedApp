@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>anujpankaj2k8@gmail.com</contactEmail>
+    <label>OAuthExercise</label>
+    <oauthConfig>
+        <callbackUrl>myapp:outh</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrCSW_LJZkdq8RN4lS.I8jDWvg4dkqt4RhklYig5UktIa24dFoUod5Rj8mUP7OZh6fXK_4ZJ</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

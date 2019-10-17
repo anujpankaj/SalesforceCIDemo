@@ -1,0 +1,33 @@
+<aura:component implements="force:appHostable">
+      
+   <!--Fetch data from static resource-->
+    <ltng:require styles="{!$Resource.slds090+'/assets/styles/salesforce-lightning-design-system.min.css'}"></ltng:require>
+    <!--Attribute section-->
+    <aura:attribute name="ResourceBasePath" type="String" default="/resource/slds090"/>
+    <aura:attribute name="startId" type="String"/>
+    <aura:attribute name="draggableDivId" type="String" default="divDraggable"/>
+    <aura:attribute name="divContainer" type="Aura.Component[]"/>
+    <aura:attribute name="contentCompName" type="String" default="LightAnujOrg:CompDivContent"/>
+    <aura:attribute name="contentCompAttrs" type="Sobject" default="{ 'testAttr' : 'hello world' }"/>    
+    <!--Handler section-->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"></aura:handler>  
+    <!-- Method section-->
+    <aura:method name="showDiv" action="{!c.showDialog}"/>
+    <!--Component content section-->  
+    <div id="divDraggable" aura:id="divDraggable" draggable="true" ondragstart="{!c.drag}"
+         class="slds-modal slds-fade-in-open DraggableDiv DivMargin">
+        <div class="modal__header">
+                  <button class="slds-button modal__close slds-button--icon-inverse" title="Close" onclick="{!c.hideDialog}">
+                    <c:svg class="slds-button__icon slds-button__icon--large CloseButton" aria-hidden="true"
+                           xlinkhref="{!v.ResourceBasePath +'/assets/icons/utility-sprite/svg/symbols.svg#close'}">
+                    </c:svg>
+                    <span class="slds-assistive-text">Close</span>
+                  </button>
+        </div>
+        <div class="slds-modal__container Container">
+            <div class="slds-modal__content slds-p-around--medium MainContainerDiv">
+                {!v.divContainer}
+            </div>
+        </div>
+     </div>
+</aura:component>

@@ -1,0 +1,5 @@
+<aura:component >
+    <aura:registerEvent name="compEvent" type="c:NonLlightingEvent"/>
+    <ui:button aura:id="notifier" label="PressMe" press="{!c.NotifierEvent}"></ui:button>
+    
+</aura:component>

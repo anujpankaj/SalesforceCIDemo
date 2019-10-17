@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>anujpankaj2k8@gmail.com</contactEmail>
+    <infoUrl>https://panalitix.com/</infoUrl>
+    <label>IdentityAndAccess</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:12672/SuccesssAuthentication.aspx</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrCSW_LJZkdq8UWyvErxXgElP9YqoQ_o_204A5VxISYdcnhxZdkHoUacYW45CQvAnxtyKtyt</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Api</scopes>
+        <scopes>Web</scopes>
+        <scopes>Full</scopes>
+        <scopes>CustomApplications</scopes>
+        <scopes>RefreshToken</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+</ConnectedApp>

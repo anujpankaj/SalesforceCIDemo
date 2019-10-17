@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- % Complete --></label>
+        <name>PerComplete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project Id --></label>
+        <name>ProjectId__c</name>
+        <relationshipLabel><!-- ProductTasks --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- SUM Of Per NO. Of  task Detail completed --></help>
+        <label><!-- Sum of % task detail completed --></label>
+        <name>Sum_of_per_task_detail_completed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Work hr&apos;s --></label>
+        <name>Work_hr_s__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

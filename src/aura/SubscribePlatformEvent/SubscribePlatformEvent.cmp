@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+		<lightning:empApi aura:id="empApi" />
+        <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+        <aura:attribute name="subscription" type="Map" />
+        <lightning:input aura:id="channel" label="channel" name="channel" type="text" value="/event/identityapp__Notification__e"/>
+        <lightning:button label="Subscribe" onclick="{! c.subscribe }" />
+</aura:component>

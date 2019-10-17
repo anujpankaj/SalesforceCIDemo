@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="ChildObject" type="WrapperChild"/>
+    <div id="divContent">
+    	Test child page
+    </div>
+    <aura:if isTrue="{!v.ChildObject.CheckFlage}">
+        Section show inside true 
+        <aura:set attribute="else">
+            Section show inside false 
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,5 @@
+<design:component label="Plick List">
+    <design:attribute name="options" datasource="apex://MyCustomPickList" label="Options"/>
+    <design:attribute name="option" datasource="apex://GenericListViewController" label="Option"/>
+    <design:attribute name="Label"/>    
+</design:component>

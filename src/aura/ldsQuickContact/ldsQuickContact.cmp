@@ -1,0 +1,59 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:attribute name="account" type="Object"/>
+    <aura:attribute name="sampleAccount" type="Object"/>
+    <aura:attribute name="accountError" type="String"/>
+    <!--Load account record-->
+    <force:recordData aura:id="accountRecordLoader"
+                      recordId="{!v.recordId}"
+                      targetRecord="{!v.account}"
+                      targetFields="{!v.sampleAccount}"
+                      targetError="{!v.accountError}"/>
+    <!--Contact record for create-->
+    <aura:attribute name="newContact" type="Object"/>
+    <aura:attribute name="sampleContact" type="Object"/>
+    <aura:attribute name="contactError" type="String"/>
+    <force:recordData aura:id="contactRecordCreate"
+                      layoutType="FULL"
+                      targetRecord="{!v.newContact}"
+                      targetFields="{!v.sampleContact}"
+                      targetError="{!v.contactError}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--Display a header with detail about the account-->
+    <div class="slds-page-header" role="banner">
+        <p class="slds-text-heading_label">{!v.sampleAccount.Name}</p>
+        <h1 class="slds-page-header__title slds-m-right_small
+                   slds-truncate slds-align-left">Create New Contact</h1>    
+    </div>
+    <!--Display Lighting Data Service error, if any -->
+    <aura:if isTrue="{!not(empty(v.accountError))}">
+    	<div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.accountError}
+            </ui:message>
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!not(empty(v.contactError))}">
+    	<div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.contactError}
+            </ui:message>
+        </div>
+    </aura:if>
+    <!--Display the new contact form-->
+    <lightning:input aura:id="contactField" name="firstName" label="First Name"
+                     value="{!v.sampleContact.FirstName}" required="true"/>
+    <lightning:input aura:id="contactField" name="lastName" label="Last Name"
+                     value="{!v.sampleContact.LastName}" required="true"/>
+    <lightning:input aura:id="contactField" name="title" label="Title"
+                     value="{!v.sampleContact.Title}" required="true"/>
+    <lightning:input aura:id="contactField" type="phone" name="phone" label="Phone Number"
+                     pattern="^(1?(-?\d{3})-?)?(\d{3})(-?\d{4})$"
+                     messageWhenPatternMismatch="The phone number must contain 7, 10, or 11 digits. Hyphens are optional."
+                     value="{!v.sampleContact.Phone}" required="true"/>
+    <lightning:input aura:id="contactField" type="email" name="email" label="Email"
+                     value="{!v.sampleContact.Email}"/>
+    <lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-top_medium"/>
+    <lightning:button label="Save Contact" onclick="{!c.handleSaveContact}"
+                      variant="brand" class="slds-m-top_medium"/>
+    
+</aura:component>

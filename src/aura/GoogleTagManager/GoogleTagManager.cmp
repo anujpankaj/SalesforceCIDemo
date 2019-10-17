@@ -1,0 +1,8 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <div>
+        	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5W52XRL"
+                 height="0" width="0" style="display:none;visibility:hidden">
+            </iframe>
+    </div>
+
+</aura:component>

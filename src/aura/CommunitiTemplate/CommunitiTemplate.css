@@ -1,0 +1,12 @@
+.THIS {
+    position: relative;
+    z-index: 1;
+}
+.THIS .mainContentArea
+{
+    background-color: beige;
+}
+.THIS .newHeader
+{
+    background-color: red;
+}

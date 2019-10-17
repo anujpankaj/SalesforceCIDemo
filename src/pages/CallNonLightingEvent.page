@@ -1,0 +1,38 @@
+<apex:page >
+        <apex:form >
+        
+           <apex:includeLightning />
+           <div id="lightning" />
+            <script>
+                var callEvent = function(event)
+                {
+                    var myEventData = event.getParam("InputParameter");
+                    alert(myEventData);
+                    alert('hello');  
+                    
+                  /*  var myExternalEvent;
+                    if(window.opener.$A &&
+                      (myExternalEvent = window.opener.$A.get("e.LightAnujOrg:NonLlightingEvent"))) {
+                         myExternalEvent.setParams({InputParameter: 'Event call from java script'});
+                         myExternalEvent.fire();
+                       }  */                
+                    
+                }
+                //Section for open lighting app
+                $Lightning.use("LightAnujOrg:NonLlightingApp", function() {
+                  $Lightning.createComponent("LightAnujOrg:NonLlightingHandler",
+                  {},
+                  "lightning",
+                  function(cmp) {
+                    $A.eventService.addHandler({ "event": "LightAnujOrg:NonLlightingEvent", 
+                                                 "handler" : callEvent
+                                               });
+                  });
+                });
+            </script>
+            
+           <!-- <input type="button" value="press me" onclick="callEvent()"/>-->
+            
+            
+        </apex:form>
+</apex:page>
