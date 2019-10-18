@@ -1,9 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes" extends="c:FetchControlData">
-    <aura:attribute name="Label" type="String"/>
-    <aura:attribute name="Name" type="String"/>
-    <aura:attribute name="SelectedValue" type="String"/>
-    <aura:attribute name="IsSelected" type="String" default="false"/>
-    <aura:handler event="c:SaveButton" action="{!c.fetchControlInformation}"/>
-	<ui:inputRadio aura:id="radioButton" name="{!v.Name}" label="{!v.Label}" change="{!c.onGroup}"
-                   value="{!v.IsSelected}"/>
-</aura:component>

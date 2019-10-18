@@ -1,4 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes">
-    <input type="file" aura:id="file" id="file" name="file" enctype="multipart/form-data" onchange="{!c.readCsvFile}" />
-    
-</aura:component>

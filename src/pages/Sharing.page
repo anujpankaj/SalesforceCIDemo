@@ -1,3 +1,0 @@
-<apex:page StandardController="Opportunity" 
-    action="{!URLFOR($Action.Opportunity.Share,Opportunity.Id)}">
-</apex:page>

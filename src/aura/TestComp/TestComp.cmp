@@ -1,8 +1,0 @@
-<aura:component controller="ContactController" implements="force:appHostable" >
-   <!-- <aura:handler name="init" value="{!this}" action="{!c.somenAction}"/>-->
-    <aura:attribute name="attrName" type="String" default="Some Default value"/>
-    
-    <div class="DivBackColor">
-    	
-    </div>
-</aura:component>

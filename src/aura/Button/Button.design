@@ -1,4 +1,0 @@
-<design:component Label="Button">
-    <design:attribute name="Label"/>
-    <design:attribute name="Variant" default="brand" datasource="base,neutral,brand,destructive,inverse"/>
-</design:component>

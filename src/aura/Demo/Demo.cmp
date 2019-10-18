@@ -1,9 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="LightingDemo">
-	<ltng:require styles="/resource/slds090/assets/styles/salesforce-lightning-design-system.min.css"/>
-    <aura:attribute name="ReturnValue" type="String" default="My Text"/>
-    
-    <ui:inputText aura:id="name" label="Enter some text" class="field" value="{!v.ReturnValue}"/>
-    
-    <button class="slds-button" onclick="{!c.ClickCall}">Button</button>
-    <ui:button label="Aura Button" labelClass="assistiveText" class="img buttonClass"  press="{!c.ClickCall}"/>
-</aura:component>

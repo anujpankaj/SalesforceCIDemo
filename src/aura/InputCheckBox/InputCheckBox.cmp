@@ -1,6 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes" extends="c:FetchControlData">
-    <aura:attribute name="Label" type="String"/>
-    <aura:attribute name="checkboxResult" type="boolean"/>
-    <aura:handler event="c:SaveButton" action="{!c.fetchControlInformation}"/>
-	<ui:inputCheckbox aura:id="checkbox" label="{!v.Label}" change="{!c.onCheck}"/>
-</aura:component>

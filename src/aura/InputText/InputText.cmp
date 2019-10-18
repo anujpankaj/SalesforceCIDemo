@@ -1,5 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes" extends="c:FetchControlData">
-    <aura:attribute name="Label" Type="String"/>
-    <aura:handler event="c:SaveButton" action="{!c.fetchControlInformation}"/>
-    <ui:inputText label="{!v.Label}"  class="slds-input" aura:id="inputText" />
-</aura:component>

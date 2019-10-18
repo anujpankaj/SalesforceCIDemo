@@ -1,4 +1,0 @@
-<aura:component >
-	<ui:button aura:id="button" buttonTitle="Click to see what you put into the field"
-               class="button" label="Click me" press="{!c.getInput}"/>
-</aura:component>
