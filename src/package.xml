@@ -3,6 +3,7 @@
   <types>
     <name>ApexClass</name>
     <members>DeploymentTest</members>
+    <members>Training</members>
   </types>
   <version>46.0</version>
 </Package>
